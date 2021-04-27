@@ -332,7 +332,7 @@ class VisionTransformer(nn.Module):
         x = self.blocks(x)
         x = self.norm(x)
         if self.dist_token is None:
-            return self.pre_logits(x[:, 0])
+            return self.pre_logits(x)
         else:
             return x[:, 0], x[:, 1]
 
